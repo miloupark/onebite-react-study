@@ -10,10 +10,12 @@ const Register = () => {
   const [name, setName] = useState("이름");
   const [birth, setBirth] = useState("");
   const [country, setCountry] = useState("");
-
+  const [bio, setBio] = useState("");
+  
+  // input에 텍스트 입력 시 onChangeName 함수 실행
   const onChangeName = (e) => {
     setName(e.target.value);
-  };
+  }; 
 
   const onChangeBirth = (e) => {
     setBirth(e.target.value);
@@ -22,6 +24,10 @@ const Register = () => {
   const onChangeCountry = (e) => {
     setCountry(e.target.value);
   };
+
+  const onChangeBio = (e) => {
+    setBio(e.target.value);
+  }
 
   return (
     <div>
@@ -38,6 +44,9 @@ const Register = () => {
           <option value="us">미국</option>
           <option value="uk">영국</option>
         </select>
+      </div>
+      <div>
+        <textarea value={bio} onChange={onChangeBio}></textarea>
       </div>
     </div>
   );
